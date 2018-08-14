@@ -39,13 +39,18 @@ Cooperative group
 https://devblogs.nvidia.com/cooperative-groups/ 
 https://devblogs.nvidia.com/faster-parallel-reductions-kepler/
 https://devblogs.nvidia.com/accelerate-r-applications-cuda/ 
+
 树的建立
 https://devblogs.nvidia.com/thinking-parallel-part-iii-tree-construction-gpu/ 
+
 树的遍历
 https://devblogs.nvidia.com/thinking-parallel-part-ii-tree-traversal-gpu/ 
+
 碰撞检测
 https://devblogs.nvidia.com/thinking-parallel-part-i-collision-detection-gpu/ 
+
 更加flexible的cuda的线程 
+
 https://devblogs.nvidia.com/cooperative-groups/ 
 
 
