@@ -6,12 +6,17 @@ docker pull kaixhin/cuda-caffe:8.0    现成的caffe环境
 docker pull gw000/keras 拉下来一个现成的docker文件，从docker hub 
 
 https://blog.csdn.net/u013010889/article/details/56503895  docker使用
+
 https://blog.csdn.net/A632189007/article/details/78801166  nvidia-docker使用 
+
 
 DockerFile的语法
 https://www.cnblogs.com/boshen-hzb/p/6400272.html
+
 https://blog.csdn.net/sinat_26917383/article/details/78728215  
+
 https://www.jianshu.com/p/9deb6f41d5bd  Docker镜像 
+
 https://blog.csdn.net/u013010889/article/details/56503895 迁移caffe环境 
 
 矩阵求导
