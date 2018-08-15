@@ -1,0 +1,37 @@
+
+# OpenCV - Reading a 16 bit grayscale image 
+
+To improve readability use the flag cv2.IMREAD_ANYDEPTH
+
+image = cv2.imread( path, cv2.IMREAD_ANYDEPTH )
+
+
+im = cv2.imread(path,-1)
+Setting the flag to 0, to load as grayscale seems to default to 8 bit. Setting to -1 loads the image "as is".
+
+# invalid configuration argument cudagetlasterror() 
+
+多半是dimCUDA设置错误了。就是grid thread之类的 
+
+int threadNum = BLOCKDIM/8;
+dim3 dimBlock(threadNum,threadNum);
+int blocks1 = nWidth/threadNum + (nWidth%threadNum == 0 ? 0 : 1);
+int blocks2 = nHeight/threadNum + (nHeight%threadNum == 0 ? 0 : 1);
+dim3 dimGrid;
+dimGrid.x = blocks1;
+dimGrid.y = blocks2;
+
+//  dim3 numThreads2(BLOCKDIM);
+//  dim3 numBlocks2(numPixels/BLOCKDIM + (numPixels%BLOCKDIM == 0 ? 0 : 1) );
+perform_scaling<<<dimGrid,dimBlock>>>(imageDevice,imageDevice_new,min,max,nWidth, nHeight);
+cudaError_t err = cudaGetLastError();
+cudasafe(err,"Kernel2");
+This is the execution of my second kernel and it is fully independent in term of the usage of data. BLOCKDIM is 512 , nWidth and nHeight are 512 too and cudasafe simply prints the corresponding string message of the error code. This section of the code gives configuration error just after the kernel call.
+
+
+
+#  https://spina.me/ 
+# ISSUE 28 https://github.com/mihaibujanca/dynamicfusion/issues/28 
+https://askubuntu.com/questions/61396/how-do-i-install-the-nvidia-drivers/61433#61433 
+OPT的最新问题
+https://github.com/niessner/Opt/issues/106
